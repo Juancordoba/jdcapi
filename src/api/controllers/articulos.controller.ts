@@ -5,9 +5,9 @@ dotenv.config();
 
 export async function findMany(req:Request, res:Response) {
     const prisma = new PrismaClient()
-    const products = await prisma.articulos.findMany({  
+    const articulos = await prisma.articulos.findMany({  
         skip: 0,
         take: 15
     })
-    res.json(products)
+    res.json(articulos)
 }
