@@ -43,7 +43,7 @@ export default class App{
         this.app.get('/', async (req,res) => {
             res.json("Api ok")
         })
-        this.app.use('/articulos/', ArticulosRoutes)
+        this.app.use('/articulos', ArticulosRoutes)
     }
 
     listen = () => {
