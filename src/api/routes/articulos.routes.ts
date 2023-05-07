@@ -2,7 +2,7 @@ const {Router} = require('express');
 const router = Router();
 
 import { NextFunction } from 'express';
-import { findMany } from '../controllers/Articulos.controller';
+import { findMany } from '../controllers/articulos.controller';
 
 // import { findAndCountAll, findOne /*, create, update */ } from '../controllers/articulos.controller'
 
