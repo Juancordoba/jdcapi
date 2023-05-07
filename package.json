@@ -1,6 +1,10 @@
 {
   "name": "jdcapi",
   "version": "1.0.0",
+  "engine": {
+    "node": "16.16.0",
+    "npm": "9.6.6"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
