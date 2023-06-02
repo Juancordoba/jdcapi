@@ -9,5 +9,5 @@ export async function findMany(req:Request, res:Response) {
         skip: 0,
         take: 15
     })
-    res.json(articulos)
+    res.json(articulos.length)
 }

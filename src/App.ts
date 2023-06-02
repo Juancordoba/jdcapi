@@ -10,9 +10,9 @@ import ArticulosRoutes from './api/routes/articulos.routes'
 
 config();
 
-var privateKey  = fs.readFileSync('./src/cert/server.key', 'utf8');
-var certificate = fs.readFileSync('./src/cert/server.crt', 'utf8');
+const {DATABASE_URL} = process.env;
 
+console.log(DATABASE_URL)
 export default class App{
     app:Application;
     credentials:any
@@ -30,8 +30,6 @@ export default class App{
 
     config = () => {
         this.app.set('port', process.env.PORT || 5000)
-        this.app.set('https_port', process.env.HTTPS || 5443);
-        this.credentials = {key: privateKey, cert: certificate};
     }
 
     middlewares = () => {
@@ -47,9 +45,6 @@ export default class App{
     }
 
     listen = () => {
-        this.httpsServer.listen(this.app.get('https_port'),() => {
-            console.log(`https server on port ${this.app.get('https_port')}`)
-        });
         this.app.listen(this.app.get('port'), () => {
             console.log(`server on port ${this.app.get('port')}`)
         })
